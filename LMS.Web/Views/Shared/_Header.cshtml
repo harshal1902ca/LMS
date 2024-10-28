@@ -1,0 +1,43 @@
+﻿@inject LMS.Service.Interfaces.IUserProviderService userProviderService
+@inject IConfiguration _configuration;
+
+<header id="header" class="header fixed-top d-flex align-items-center headerClass">
+    <nav class="header-nav ms-auto">
+
+        @if (userProviderService.IsAuthenticated())
+        {
+            <ul class="d-flex align-items-center">
+                <li class="nav-item dropdown nav-profile">
+                    <a id="userMenu" href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">
+                        @userProviderService.UserClaim.Username | @userProviderService.UserClaim.RoleName
+                    </a>
+                    <ul aria-labelledby="userMenu" class="dropdown-menu border-0 shadow">
+                        <li><i class="fas fa-sign-in-alt"></i><a asp-controller="User" asp-action="Logout" class="dropdown-item">Log off </a></li>
+                    </ul>
+                </li>
+            @*</ul>
+            <ul class="navbar-nav justify-content-end">*@
+                <li class="nav-item btn-sm btn-dark">
+                    <i class="fas fa-sign-in-alt"></i>
+                    @Html.ActionLink("Aquired Book", "Aquired", "Book", new { @class = "nav-link icon", style="display:inline" })
+                </li>
+                <li class="nav-item btn-sm btn-dark">
+                    <i class="fas fa-sign-in-alt"></i>
+                    @Html.ActionLink("All Book List", "Index", "Book", new { @class = "nav-link icon", style="display:inline" })
+                </li>
+            </ul>
+            
+        }
+        else
+        {
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item btn-sm btn-dark">
+                    <i class="fas fa-sign-in-alt"></i>
+                    @Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link icon", style="display:inline" })
+                </li>
+            </ul>
+        }
+
+
+    </nav>
+</header>

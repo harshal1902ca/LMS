@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@* oncontextmenu="return false;" *@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="icon" type="image/x-icon" href="~/library.ico">
+    <partial name="_CssPartial" />
+
+</head>
+<body>
+    <partial name="_BusyIndicatorPartial" />
+    <partial name="_Header" />
+
+    <main id="main" class="main">
+        <div class="row rowBox">
+            <div class="column1">
+                <div class="rectBox">
+                </div>
+                <div class="column2">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </main>
+    <partial name="_ScriptsPartial" />
+    <partial name="_ValidationScriptsPartial" />
+    <partial name="_ScriptsNotification" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+﻿@using LMS.Abstraction.Enums;
+@using Core.Utility.Utils;
+@inject LMS.Service.Interfaces.IUserProviderService userProviderService
+
+<aside id="sidebar" class="sidebar">
+    <a id="dashboard-link" asp-controller="Dashboard" asp-action="Index" class="logo">
+        
+    </a>
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        @if (userProviderService.UserClaim.IsAdmin)
+        {
+            <label class="sidemenuHeading">ADMIN MENU</label>
+
+            <li class="nav-item " id="dashboardAdmin">
+                <a asp-action="Index" asp-controller="Dashboard" class="nav-link  @(Html.IsSelected("Dashboard", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " style="    margin-left: -2px;" />
+                    <span class="sidebarname" style="margin-left: -13px">Dashboard</span>
+                    <span class="sidebarname2" style="margin-left: -46px;">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item" id="documentTypeAdmin">
+                <a asp-action="Index" asp-controller="DocumentType" class="nav-link @(Html.IsSelected("DocumentType", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " />
+                    <span class="sidebarname">Document Types</span>
+                    <span class="sidebarname2" style="margin-left: -75px !important">Document Types</span>
+                </a>
+            </li>
+            <li class="nav-item" id="userAdmin">
+                <a asp-action="Index" asp-controller="User" class="nav-link @(Html.IsSelected("User", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " />
+                    <span class="sidebarname" style="margin-left: -11px;">Users</span>
+                    <span class="sidebarname2" style="margin-left: -16px;">Users</span>
+                </a>
+            </li>
+            <li class="nav-item" id="roleAdmin">
+                <a asp-action="Index" asp-controller="Role" class="nav-link @(Html.IsSelected("Role", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " />
+                    <span class="sidebarname">Roles</span>
+                    <span class="sidebarname2" style="margin-left: -16px;">Roles</span>
+                </a>
+            </li>
+            <li class="nav-item" id="designationAdmin">
+                <a asp-action="Index" asp-controller="Designation" class="nav-link @(Html.IsSelected("Designation", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " />
+                    <span class="sidebarname">Designations</span>
+                    <span class="sidebarname2" style="margin-left: -55px;">Designations</span>
+                </a>
+            </li>
+            <li class="nav-item" id="verticalAdmin">
+                <a asp-action="Index" asp-controller="Vertical" class="nav-link @(Html.IsSelected("Vertical", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " />
+                    <span class="sidebarname" style="margin-left: -10px;">Verticals</span>
+                    <span class="sidebarname2" style="margin-left: -33px;">Verticals</span>
+                </a>
+            </li>
+            <li class="nav-item" id="divisionAdmin">
+                <a asp-action="Index" asp-controller="Division" class="nav-link @(Html.IsSelected("Division", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " />
+                    <span class="sidebarname">Divisions</span>
+                    <span class="sidebarname2" style="margin-left: -34px;">Divisions</span>
+                </a>
+            </li>
+            <li class="nav-item" id="departmentAdmin">
+                <a asp-action="Index" asp-controller="Department" class="nav-link @(Html.IsSelected("Department", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " />
+                    <span class="sidebarname">Departments</span>
+                    <span class="sidebarname2" style="margin-left: -55px;">Departments</span>
+                </a>
+            </li>
+            <li class="nav-item" id="locationAdmin">
+                <a asp-action="Index" asp-controller="Location" class="nav-link @(Html.IsSelected("Location", "Index"))">
+                    <img src="~/assets/img/dashboard.svg" class="img1 " />
+                    <img src="~/assets/img/dashboard_selected.svg" class="img2 " />
+                    <span class="sidebarname">Locations</span>
+                    <span class="sidebarname2" style="margin-left: -38px;">Locations</span>
+                </a>
+            </li>
+            <li id="schLMSlarAdmin">
+                <a asp-action="Index" asp-controller="SchLMSlar" class="nav-link @(Html.IsSelected("SchLMSlar", "Index"))">
+                    <img src="~/assets/img/template.svg" class="img1 " />
+                    <img src="~/assets/img/template_selected.svg" class="img2 " />
+                    <span class="sidebarname" style="margin-left: -6px;">SchLMSlar</span>
+                    <span class="sidebarname2">SchLMSlar</span>
+                </a>
+
+            </li>
+        }
+        else
+        {
+            
+
+        }
+    </ul>
+</aside>
