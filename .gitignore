@@ -238,6 +238,24 @@ ClientBin/
 *.jfm
 *.pfx
 *.publishsettings
+*.dll
+*.cache
+*.dll
+*.exe
+*.pdb
+/build/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+*.opensdf
+*.tlog
+*.log
+TestResult.xml
+*.VisualState.xml
+Version.cs
+Version.h
+Version.cpp
 orleans.codegen.cs
 
 # Including strong name files can present a security risk
